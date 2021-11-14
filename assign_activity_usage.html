@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Assign Guest To Activity</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Assign Guest To Activity </h1>
+<p><b>Function Number:</b> 7</p>
+<p><b>Function Name: </b>Assign Guest To Activity</p>
+<a href="assign_activity.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Insertion</p>
+<p><b>Description: </b>This function accepts the following inputs:
+    Guest ID, Activity Name, Scheduled On (DateTime), and Status, which are
+    used to create new records within the 'assign_activities' table.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for creating or managing reservations
+    and guest activities.
+</p>
+<p><b>Tables Affected: </b>assign_activities</p>
+<p><b>Sample Input: </b> Guest ID = 1, Activity Name = 'Archery', Schedule On = 04/09/2021 10:18 AM, Status
+= 'Scheduled'</p>
+<p><b>Sample Output: </b>A table displays all guest activities that Guest ID 1 has been assigned to.</p>
+<p><b>Notes: </b>
+    This function consists of one insert query. All parameters passed to the web form (Guest ID,
+    Activity Name, Schedule On, and Status) are mandatory and if they are not submitted a message is displayed
+    informing the user that these fields are required (using mysqli_num_rows()). Error checking is provided such that
+    if an error occurs, the error message will be echoed out to the user in the format "ERROR: $error_specific_message."
+    A second query is then performed to retrieve all activities for the Guest ID passed to the function;
+    these results will be displayed in a table.
+
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Create New Reservation</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Create New Reservation</h1>
+<p><b>Function Number:</b> 2 </p>
+<p><b>Function Name: </b>Create New Reservation</p>
+<a href="reservation.html">Link to Function Implementation</a>
+<p><b>Function Type: </b> Insert (3 tables affected)</p>
+<p><b>Description: </b>This function accepts as input clearly labelled
+    fields describing a guest's booking and reservation. The
+function uses this information to insert new records into affected tables.
+If entries already exist under the provided primary keys, those entries
+will be updated to contain new information.</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for creating or managing reservations
+</p>
+<p><b>Tables Affected: </b>guests, reservation, booking</p>
+<a href="http://webdev.cs.umt.edu/~username/reservation.png">Sample Input</a>
+<p><b>Sample Output: </b>Informs users that tables have been updated and
+    displays the specific entries having just been inserted into each
+    of the affected tables. </p>
+<p><b>Notes: </b>
+    This function receives 20 form variables and inserts them into their
+    appropriate position within three seperate tables. It utilizes the 'REPLACE INTO'
+    command as opposed to 'INSERT INTO' to avoid duplicate records. The PHP
+    implementation checks to ensure that required fields are not empty. If they
+    are, a message is echoed.
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

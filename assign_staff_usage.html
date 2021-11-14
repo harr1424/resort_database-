@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Assign Staff To Booking</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Assign Staff To Booking </h1>
+<p><b>Function Number:</b> 8</p>
+<p><b>Function Name: </b>Assign Staff To Booking</p>
+<a href="assign_staff.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Insertion</p>
+<p><b>Description: </b>This function accepts as inputs Booking ID and Staff ID.
+    It will then create a record in the table 'assign_staff' linking a particular
+    Staff ID to a specific Booking ID.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for creating or managing reservations
+    and tracking staff assignments
+</p>
+<p><b>Tables Affected: </b>assign_staff</p>
+<p><b>Sample Input: </b> Booking ID = 1, Staff ID = 6</p>
+<p><b>Sample Output: </b>"Staff has been assigned"</p>
+<p><b>Notes: </b>
+    This function consists of one insert query on one table (assign_staff). Booking ID and Staff ID
+    are associated within the created record. A third column exists in the table which can be modified using the
+    'assign_feedback' function in order to memorialize feedback provided for a particular staff member
+    by a booking during that booking's checkout survey. Error checking is performed to ensure
+    that Staff ID and Booking ID exist in the database, and if any errors occur during insertion
+    these are displayed to the user. For example, attempting to create a duplicate assignment will
+    result in the following error message: "ERROR Making Assignment: Duplicate entry '1-1' for key 'PRIMARY.'
+" In this case, the association of Guest ID 1 and Staff ID 1 already exists in the table.
+
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

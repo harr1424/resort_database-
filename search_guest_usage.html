@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Search For A Guest</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Search For A Guest</h1>
+<p><b>Function Number:</b> 4</p>
+<p><b>Function Name: </b>Search For A Guest</p>
+<a href="search_guest.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Query</p>
+<p><b>Description: </b>This function accepts any of the following as inputs:
+Guest First Name, Guest Last Name, Phone, or Email.  This function
+returns a table containing records of any guests with matching
+search criteria.</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for creating or managing reservations
+</p>
+<p><b>Tables Affected: </b>guests</p>
+<p><b>Sample Input: </b> Enter Guest First Name = 'Gordon'</p>
+<p><b>Sample Output: </b> [1, 'Gordon', 'Cole', '1954-08-09', '2103049879', 'gcole@fbi.gov', '  '. '935 Pennsylvania Avenue', 'Washington', 'D.C.', 'USA', '20535-00001']</p>
+<p><b>Notes: </b>
+    This function uses the OR operator to query the table 'guests' for any
+    records matching any of the entered search fields. If no results are found,
+    mysqli_num_rows() will return zero and the user will be informed that no
+    guests matching their search were found.
+
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

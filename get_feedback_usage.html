@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Print Staff Feedback </title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Print Staff Feedback </h1>
+<p><b>Function Number:</b> 13</p>
+<p><b>Function Name: </b>Print Staff Feedback</p>
+<a href="staff_feedback.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Query</p>
+<p><b>Description: </b>This function accepts a Staff ID number as input and will
+    output a table containing all feedback provided for that employee.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for tracking staff performance and
+    guest satisfaction
+</p>
+<p><b>Tables Affected: </b>assign_staff</p>
+<p><b>Sample Input: </b> Staff ID = 3</p>
+<p><b>Sample Output: </b>A table displays feedback provided for Staff ID 3</p>
+<p><b>Notes: </b>
+    This function will query the 'assign_staff' table for records containing a matching Staff ID.
+    The 'feedback' column from these records will be displayed in a table for the user. This function
+    will return a message if no feedback exists for a particular Staff ID or if an error occurs.
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

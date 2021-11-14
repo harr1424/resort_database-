@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Print A Booking's Bill </title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Print A Booking's Bill </h1>
+<p><b>Function Number:</b> 12</p>
+<p><b>Function Name: </b>Print A Booking's Bill</p>
+<a href="print_charges.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Query (Two tables)</p>
+<p><b>Description: </b>This function accepts as input a Booking ID. It will output
+    a table displaying all charges associated with the Booking ID provided. This table displays
+    what item was charged, where the item was sold, its price, and the date and time the charge
+    occurred.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for printing a booking's bill
+</p>
+<p><b>Tables Affected: </b>charge</p>
+<p><b>Sample Input: </b> Booking ID = 1</p>
+<p><b>Sample Output: </b>A table displays all charges debited to the Booking ID provided,
+ including detailed information about the charge</p>
+<p><b>Notes: </b>
+    This function will query the 'charge' table for records matching the Booking ID provided.
+    These records will be associated with information from the table 'billables', such as
+    item name, location, and price, which will also be displayed to the user. If no records exist,
+    or if an error occurs, a message is displayed to the user.
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

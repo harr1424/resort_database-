@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<html>
+<head>
+<title>Charge Booking</title>
+<script>
+function Timestamp()
+{
+const currentTime = new Date();
+var year = currentTime.getFullYear();
+var month = currentTime.getMonth() + 1;
+var day = currentTime.getDate();
+var dash = "-";
+var space = " ";
+var colon = ":";
+var hour = currentTime.getHours();
+var minutes = currentTime.getMinutes();
+var seconds = currentTime.getSeconds();
+var timestamp = year.toString().concat(dash, month, dash, day, space, hour, colon, minutes, colon, seconds);
+$('#occurred').val(timestamp);
+}
+</script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body onload="Timestamp()">
+<h1>Enter Charge Details</h1>
+<a href="billables.php">List of Billable Items</a>
+<br>
+<br>
+<a href="search_reservation.html">Search for Booking ID</a>
+<br>
+<br>
+<div class="container">
+<form action="process_charge.php" method="post">
+<fieldset>
+<label>Current Time</label><type="text"/>
+<input type="text" id="occurred" name="occurred">
+<br>
+<label>Billed Item ID</label><type="text"/>
+<input type="text" id="billable" name="billable">
+<br>
+<label>Booking ID</label><type="text"/>
+<input type="text" id="booking" name="booking">
+<br>
+<input type="submit" name="process" value="Charge" />
+</form>
+    <a href="home.html">Main Menu</a>
+
+</body>
+</html>
+
+

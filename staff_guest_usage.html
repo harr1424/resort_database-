@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Print Staff To Guest Relationships </title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Print Staff To Guest Relationships </h1>
+<p><b>Function Number:</b> 18</p>
+<p><b>Function Name: </b>Print Staff To Guest Relationships</p>
+<a href="staff_guest.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Query (Five Tables)</p>
+<p><b>Description: </b>This function accepts a Staff ID number as input and will
+    output a table wherein each row corresponds to a particular guest that has been
+    served in some way by the employee assigned the provided Staff ID. Guest arrival and
+    departure information is provided, as well as the feedback provided by the booking
+    during their checkout survey. Note that feedback is provided by an entire booking,
+    and not by individual guests.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for tracking staff activity
+    and guest satisfaction
+</p>
+<p><b>Tables Affected: </b>staff, booking, guests, assign_staff, and reservation</p>
+<p><b>Sample Input: </b> Staff ID = 3</p>
+<p><b>Sample Output: </b>A table displaying rows for each guest served by Staff ID 3,
+including guest arrival and departure dates, guest first and last names, and feedback provided
+by the booking. </p>
+<p><b>Notes: </b>
+    This function queries five tables in order to retrieve the provided information. If a Staff ID
+    does not exist, is not associated with any guests, or any other error is encountered, the appropriate
+    message will be displayed. </p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

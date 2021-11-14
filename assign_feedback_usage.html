@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Assign Feedback To Staff</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Assign Feedback To Staff </h1>
+<p><b>Function Number:</b> 9</p>
+<p><b>Function Name: </b>Assign Feedback To Staff</p>
+<a href="assign_feedback.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Update</p>
+<p><b>Description: </b>This function accepts as inputs Booking ID, Staff ID,
+    and Feedback. It will update the record within table 'assign_staff' containing
+    matching Booking ID and Staff ID keys and update the Feedback column to
+    contain the feedback provided.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for tracking guest satisfaction.
+</p>
+<p><b>Tables Affected: </b>assign_staff</p>
+<p><b>Sample Input: </b> Booking ID = 1, Staff ID = 6, Feedback = 'Seemed angry much of the time'</p>
+<p><b>Sample Output: </b>"Feedback has been assigned"</p>
+<p><b>Notes: </b>
+    This function consists of an update to the table 'assign_staff'. Feedback provided will be assigned
+    to the record with matching Booking and Staff ID keys. Error checking is performed to ensure
+    that both the Staff and Booking IDs exist in the database.  If an error occurs, this message will
+    be displayed to the user.
+
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

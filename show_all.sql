@@ -1,0 +1,1 @@
+select * from activities;select * from assign_activities;select * from assign_lodging;select * from assign_role;select * from assign_staff;select * from billables;select * from booking;select * from charge;select * from child;select * from dependent;select * from guests;select * from lodging;select * from reservation;select * from role;select * from staff;              

@@ -1,0 +1,258 @@
+MariaDB [username]> source show_all.sql
+ACTIVITIES:
++----------------------------+---------+-------------------+
+| name                       | price   | location          |
++----------------------------+---------+-------------------+
+| Archery                    |  300.00 | Archery Range     |
+| ATV Backcountry Tour       | 2000.00 | Ovando            |
+| ATV Track                  |  400.00 | ATV Track         |
+| Canoeing                   |  300.00 | Seely Lake        |
+| Cross Country Skiing       |  200.00 | Blast Park        |
+| Dog Sledding               | 1200.00 | Ovando            |
+| Fitness Center             |   30.00 | Fitness Center    |
+| Fly Fishing                |  400.00 | Blackfoot River   |
+| Garnet Ghost Town Tour     |  500.00 | Garnet Ghost Town |
+| Horseback Riding           |  500.00 | Ovando            |
+| Horseback Riding Overnight | 1500.00 | Bob Marshall      |
+| Hot Air Balooning          | 7000.00 | Launch Pad One    |
+| Snow Tubing                |  200.00 | Blast Park        |
+| Trap Shooting              |  450.00 | East Range        |
+| Whitewater Rafting         |  700.00 | Blackfoot River   |
++----------------------------+---------+-------------------+
+15 rows in set (0.000 sec)
+ASSIGN_ACTIVITIES:
++----+----------------------------+---------------------+-----------+
+| id | name                       | scheduled           | status    |
++----+----------------------------+---------------------+-----------+
+|  1 | Archery                    | 2021-06-14 14:30:00 | scheduled |
+|  1 | Canoeing                   | 2021-06-15 10:00:00 | scheduled |
+|  1 | Garnet Ghost Town Tour     | 2021-06-16 10:00:00 | scheduled |
+|  2 | ATV Track                  | 2021-06-14 10:00:00 | scheduled |
+|  2 | Horseback Riding           | 2021-06-15 14:00:00 | scheduled |
+|  3 | Horseback Riding           | 2021-06-15 14:00:00 | scheduled |
+|  4 | Horseback Riding           | 2021-06-15 14:00:00 | scheduled |
+|  4 | Trap Shooting              | 2021-06-16 10:00:00 | scheduled |
+|  5 | Horseback Riding           | 2021-06-15 14:00:00 | scheduled |
+|  5 | Horseback Riding Overnight | 2021-06-17 09:00:00 | scheduled |
++----+----------------------------+---------------------+-----------+
+10 rows in set (0.000 sec)
+ASSIGN_LODGING:
++------------+----------+--------------+----------------+
+| booking_id | guest_id | site_name    | lodging_number |
++------------+----------+--------------+----------------+
+|          1 |        1 | Clark        |            101 |
+|          1 |        2 | Clark        |            102 |
+|          1 |        3 | Clark        |            103 |
+|          1 |        4 | Clark        |            104 |
+|          1 |        5 | Clark        |            201 |
+|          2 |        6 | Glamping     |              1 |
+|          2 |        7 | Glamping     |              1 |
+|          3 |        8 | Glamping     |              2 |
+|          4 |        9 | Lewis        |            101 |
+|          4 |       10 | Lewis        |            101 |
+|          5 |       11 | Island Lodge |              0 |
++------------+----------+--------------+----------------+
+11 rows in set (0.000 sec)
+ASSIGN_ROLE:
++--------------------+----------+------------+------+
+| role_name          | staff_id | start      | end  |
++--------------------+----------+------------+------+
+| Archery Instructor |        8 | 1980-01-01 | NULL |
+| Chef               |        5 | 1989-03-04 | NULL |
+| Concierge          |        4 | 1992-08-18 | NULL |
+| Guest Reception    |        2 | 1994-06-21 | NULL |
+| Plumber            |        6 | 1981-09-01 | NULL |
+| Raft Guide         |        7 | 2000-05-28 | NULL |
+| Security           |        1 | 1970-01-01 | NULL |
+| Transportation     |        3 | 2010-07-01 | NULL |
+| Winter Guide       |        9 | 1954-01-01 | NULL |
+| Yoga Instructor    |       10 | 2007-08-12 | NULL |
++--------------------+----------+------------+------+
+10 rows in set (0.000 sec)
+ASSIGN_STAFF:
++----------+------------+-------------------------------------------------------+
+| staff_id | booking_id | feedback                                              |
++----------+------------+-------------------------------------------------------+
+|        1 |          1 | Slight body odor but he spends most his time outdoors |
+|        1 |          5 | Not very talkative                                    |
+|        3 |          1 | A little too friendly                                 |
+|        3 |          2 | Kept asking us where we were from                     |
+|        3 |          3 | Very fast driver, I thought I would be sick           |
+|        3 |          4 | Needs to trim fingernails                             |
+|        3 |          5 | Something not quite right about this one              |
+|        4 |          1 | She seems familiar for some reason                    |
+|        4 |          2 | Wears a lot of makeup                                 |
+|        4 |          3 | Great customer service                                |
+|        4 |          4 | A delight to be around                                |
+|        4 |          5 | Very warm personality                                 |
+|        7 |          1 | Seems to anger easily                                 |
+|        8 |          1 | Has a lot of insight into the human condition         |
++----------+------------+-------------------------------------------------------+
+14 rows in set (0.000 sec)
+BILLABLES:
++----+--------------------------+---------------+--------+
+| id | description              | location      | amount |
++----+--------------------------+---------------+--------+
+|  1 | Continental Breakfast    | Colonels Cafe |  70.99 |
+|  2 | Lunch Buffet Classic     | Colonels Cafe |  90.99 |
+|  3 | Lunch Buffet Asian       | Colonels Cafe |  99.99 |
+|  4 | Lunch Buffet Octoberfest | Colonels Cafe | 120.99 |
+|  5 | Lunch Buffet Indian      | Colonels Cafe |  80.99 |
+|  6 | Pizza Limit 5 Toppings   | Colonels Cafe |  30.99 |
+|  7 | Pizza Unlimited          | Colonels Cafe |  40.99 |
+|  8 | Steak Sirloin            | Colonels Cafe |  50.99 |
+|  9 | Steak Ribeye             | Colonels Cafe |  60.99 |
+| 10 | Beer Tier 1              | Colonels Cafe |  10.99 |
+| 11 | Beer Tier 2              | Colonels Cafe |  15.99 |
+| 12 | Wine Tier 1              | Colonels Cafe |  20.00 |
+| 13 | Wine Tier 2              | Colonels Cafe |  30.00 |
+| 14 | Wine Tier 3              | Colonels Cafe |  40.00 |
++----+--------------------------+---------------+--------+
+14 rows in set (0.000 sec)
+BOOKING:
++----+------------+------------+----------------+----------+-------------+----------------+
+| id | arrive     | depart     | special        | type     | event       | referral       |
++----+------------+------------+----------------+----------+-------------+----------------+
+|  1 | 2021-06-13 | 2021-07-15 | Government     | Retreat  | NULL        | Garland Briggs |
+|  2 | 2021-04-01 | 2021-04-15 | NULL           | Wedding  | NULL        | NULL           |
+|  3 | 2021-10-04 | 2021-10-09 | NULL           | Festival | Octoberfest | NULL           |
+|  4 | 2022-12-28 | 2023-01-03 | Peanut Allergy | Family   | NULL        | NULL           |
+|  5 | 2021-08-13 | 2021-09-11 | VIP            | Concert  | NULL        | Elton John     |
++----+------------+------------+----------------+----------+-------------+----------------+
+5 rows in set (0.000 sec)
+CHARGE:
++------------+-------------+---------------------+
+| booking_id | billable_id | occurred            |
++------------+-------------+---------------------+
+|          1 |           1 | 2021-07-11 08:17:33 |
+|          1 |           1 | 2021-07-12 08:17:33 |
+|          1 |           1 | 2021-07-13 08:17:33 |
+|          1 |           1 | 2021-07-14 08:17:33 |
+|          1 |           1 | 2021-07-15 08:17:33 |
+|          1 |           2 | 2021-07-11 12:34:11 |
+|          1 |           2 | 2021-07-12 12:34:11 |
+|          1 |           2 | 2021-07-13 12:34:11 |
+|          1 |           2 | 2021-07-14 12:34:11 |
+|          1 |           2 | 2021-07-15 12:34:11 |
+|          1 |          11 | 2021-07-11 12:34:11 |
+|          1 |          11 | 2021-07-13 12:34:11 |
+|          1 |          11 | 2021-07-15 12:34:11 |
+|          1 |          14 | 2021-07-12 12:34:11 |
+|          1 |          14 | 2021-07-14 12:34:11 |
++------------+-------------+---------------------+
+15 rows in set (0.000 sec)
+CHILD:
++----+-------+------------+------+------+
+| id | name  | dob        | age  | sex  |
++----+-------+------------+------+------+
+|  1 | Ike   | 2011-09-11 | NULL | M    |
+|  1 | Mary  | 2013-08-13 | NULL | F    |
+|  1 | Peter | 2009-04-14 | NULL | M    |
+|  5 | DJ    | 2018-11-11 | NULL | M    |
+|  5 | Todd  | 2018-11-11 | NULL | M    |
++----+-------+------------+------+------+
+5 rows in set (0.000 sec)
+DEPENDENT:
++----------+-----------+------+------------+------+----------+
+| staff_id | name      | sex  | dob        | age  | relation |
++----------+-----------+------+------------+------+----------+
+|        3 | Jerry Jr. | M    | 2011-01-13 | NULL | child    |
+|        5 | Becky     | F    | 2018-09-08 | NULL | child    |
+|        6 | Pierre    | M    | 2014-09-19 | NULL | child    |
+|        9 | April     | F    | 2012-04-02 | NULL | child    |
+|       10 | Burt      | M    | 2009-02-03 | NULL | child    |
++----------+-----------+------+------------+------+----------+
+5 rows in set (0.000 sec)
+GUESTS:
++----+---------+------------+------------+------------+--------------------------+------+--------------------------+--------------------+--------------+-----------+------------+
+| id | fname   | lname      | dob        | phone      | email                    | age  | street                   | city               | state        | country   | postal     |
++----+---------+------------+------------+------------+--------------------------+------+--------------------------+--------------------+--------------+-----------+------------+
+|  1 | Gordon  | Cole       | 1954-08-09 | 2103049879 | gcole@fbi.gov            | NULL | 935 Pennsylvania Avenue  | Washington         | D.C.         | USA       | 20535-0001 |
+|  2 | Chester | Desmond    | 1972-08-11 | 2023243000 | ddesmond@fbi.gov         | NULL | 935 Pennsylvannia Avenue | Washington         | D.C.         | USA       | 20535-0001 |
+|  3 | Phillip | Jeffries   | 1958-07-11 | 2023458789 | pjeffries@fbi.gov        | NULL | Avenida Colombia 4300    | C1425 Buenos Aires | Buenos Aires | Argentina | NULL       |
+|  4 | Albert  | Rosenfield | 1965-02-11 | 3109293451 | arosenfield@fbi.gov      | NULL |  11000 Wilshire Blvd,    | Los Angeles        | CA           | USA       | 90024      |
+|  5 | Tamara  | Preston    | 1994-05-19 | 2023198988 | tpreston@fbi.gov         | NULL | 935 Pennsylvannia Avenue | Washington         | D.C.         | USA       | 20535-0001 |
+|  6 | Abraham | Atkins     | 1999-02-21 | 7196453232 | NULL                     | NULL | 1424 Airway Blvd.        | Fort Collins       | CO           | USA       | 34512      |
+|  7 | Alice   | Anderson   | 2000-07-18 | 7183456767 | a_anderson@hotmail.com   | NULL | 1230 S 5th St. W         | MIssoula           | MT           | USA       | 59801      |
+|  8 | Hans    | Heinzleman | 1954-09-21 | 4103498787 | NULL                     | NULL | 3900 Willow Ave.         | Long Beach         | CA           | USA       | 90805      |
+|  9 | Jimmy   | Johnson    | 1980-01-18 | 4064591772 | johnsons_4ever@yahoo.com | NULL | 8700 HWY 93              | Kalispell          | MT           | USA       | 58719      |
+| 10 | Patty   | Johnson    | 1960-04-15 | NULL       | NULL                     | NULL | 8700 HWY 93              | Kalispell          | MT           | USA       | 58719      |
+| 11 | Elon    | Musk       | 1971-06-28 | NULL       | elonmusk@tesla.com       | NULL | NULL                     | NULL               | NULL         | NULL      | NULL       |
++----+---------+------------+------------+------------+--------------------------+------+--------------------------+--------------------+--------------+-----------+------------+
+11 rows in set (0.000 sec)
+LODGING:
++--------------+--------+---------+---------------+
+| site_name    | number | rate    | max_occupancy |
++--------------+--------+---------+---------------+
+| Clark        |    101 |  900.00 |             6 |
+| Clark        |    102 | 1150.00 |             6 |
+| Clark        |    103 | 1300.00 |             8 |
+| Clark        |    104 | 1250.00 |             8 |
+| Clark        |    201 | 1100.00 |             6 |
+| Clark        |    202 | 1250.00 |             6 |
+| Clark        |    203 | 1350.00 |             8 |
+| Clark        |    204 | 1400.00 |             8 |
+| Glamping     |      1 | 3000.00 |             9 |
+| Glamping     |      2 | 4000.00 |             9 |
+| Glamping     |      3 | 5000.00 |             6 |
+| Island Lodge |      0 | 9999.00 |            21 |
+| Lewis        |    101 | 1200.00 |             4 |
+| Lewis        |    102 | 1200.00 |             4 |
+| Lewis        |    103 | 1400.00 |             4 |
+| Lewis        |    104 | 1400.00 |             4 |
++--------------+--------+---------+---------------+
+16 rows in set (0.000 sec)
+RESERVATION:
++----------+------------+---------------------+-----------+----------------+--------------+
+| guest_id | booking_id | occurred            | status    | bank           | acct         |
++----------+------------+---------------------+-----------+----------------+--------------+
+|        1 |          1 | 2021-02-14 09:34:22 | scheduled | Chase          | 8569652125   |
+|        2 |          1 | 2021-02-14 09:34:22 | scheduled | Chase          | 854145521    |
+|        3 |          1 | 2021-02-14 09:34:22 | scheduled | Chase          | 5852586596   |
+|        4 |          1 | 2021-02-14 09:34:22 | scheduled | Chase          | 85452158963  |
+|        5 |          1 | 2010-02-14 09:34:22 | scheduled | Chase          | 58541254478  |
+|        6 |          2 | 2021-02-12 17:39:12 | scheduled | First Security | 0712343423   |
+|        7 |          2 | 2020-12-12 17:39:12 | scheduled | First Security | 0712343423   |
+|        8 |          3 | 2020-08-19 12:33:09 | scheduled | Deutsch Bank   | 999081564-21 |
+|        9 |          4 | 2021-01-01 08:30:12 | scheduled | First Farmers  | 444302100    |
+|       10 |          4 | 2021-01-01 08:30:12 | scheduled | First Farmers  | 444302100    |
+|       11 |          5 | 2017-10-12 23:11:23 | scheduled | Wells Fargo    | 5896545215   |
++----------+------------+---------------------+-----------+----------------+--------------+
+11 rows in set (0.000 sec)
+ROLE:
++---------------------+----------------+
+| name                | location       |
++---------------------+----------------+
+| Archery Instructor  | Activities     |
+| Chef                | Dining         |
+| Concierge           | Guest Services |
+| Firearms Instructor | Activities     |
+| Fleet Mechanic      | Garage         |
+| Glamping Butler     | Guest Services |
+| Guest Reception     | Main Entrance  |
+| Housekeeping        | Guest Services |
+| Plumber             | Guest Services |
+| Raft Guide          | Activities     |
+| Security            | Main Entrance  |
+| Transportation      | Garage         |
+| Watercraft Guide    | Activities     |
+| Winter Guide        | Activities     |
+| Yoga Instructor     | Fitness Center |
++---------------------+----------------+
+15 rows in set (0.000 sec)
+STAFF:
++----+----------+----------+------------+------------+-------+---------------------------+------------+-------+------------+
+| id | fname    | lname    | dept       | phone      | email | street                    | city       | state | zip        |
++----+----------+----------+------------+------------+-------+---------------------------+------------+-------+------------+
+|  1 | Harry    | Truman   | Security   | 4067230911 | NULL  | 1424 W 259th St.          | Tukwila    | WA    | 98188-3716 |
+|  2 | Donna    | Hayward  | Reception  | 4067291484 | NULL  | 288 W 6th St.             | Missoula   | MT    | 59802-1232 |
+|  3 | Richard  | Horne    | Transport  | 4067345439 | NULL  | 211 Mansion Heights Drive | Missoula   | MT    | 59808-0133 |
+|  4 | Josie    | Packard  | Concierge  | 3102345984 | NULL  | 1319 Imposter Lane        | Potomac    | MT    | 59814      |
+|  5 | Norma    | Jennings | Chef       | 6514876566 | NULL  | 1776 Sunset Loop          | Polson     | MT    | 59834      |
+|  6 | Jaques   | Renault  | Plumber    | 3178345767 | NULL  | 6458 Rollercoaster Road   | Frenchtown | MT    | 59819      |
+|  7 | Bobby    | Briggs   | Raft Guide | 4067398799 | NULL  | 911 SW Higgins Avenue     | Missoula   | MT    | 59801      |
+|  8 | Leo      | Johnson  | Archery    | 8704523434 | NULL  | 710 South Avenue          | Missoula   | MT    | 59801      |
+|  9 | Lawrence | Jacoby   | Winter     | 4065456777 | NULL  | 3452 Bass Road            | Nisswa     | MN    | 56474      |
+| 10 | Shelly   | Johnson  | Yoga       | 6512398704 | NULL  | 2911 Snelling Avenue      | Saint Paul | MN    | 55119      |
++----+----------+----------+------------+------------+-------+---------------------------+------------+-------+------------+
+10 rows in set (0.000 sec)

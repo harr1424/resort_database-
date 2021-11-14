@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Print Guest Activity History </title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Print Guest Activity History </h1>
+<p><b>Function Number:</b> 15</p>
+<p><b>Function Name: </b>Print Guest Activity History</p>
+<a href="guest_history.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Query (Four Tables)</p>
+<p><b>Description: </b>This function accepts a Guest ID number as input and will
+    output a table describing a guest's activity history at the resort. Each activity
+    a guest has signed up for will be displayed, along with information such as whether it was
+    cancelled, when it was scheduled for, and what stay / reservation it was associated with.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for managing guest reservations
+    and tracking guest activity history
+</p>
+<p><b>Tables Affected: </b>guests, booking, assign_activities, and reservation</p>
+<p><b>Sample Input: </b> Guest ID = 1</p>
+<p><b>Sample Output: </b>A table displays all activities Guest ID 1 has signed up for, along with scheduling
+information and information about the reservation the activities are associated with. </p>
+<p><b>Notes: </b>
+    This function queries four tables in order to gather all output information.
+ If the provided Guest ID does not exist, or if it does not yet have any activity history,
+or if any other error occurs, the appropriate message will be displayed to the user. </p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

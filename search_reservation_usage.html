@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Search For A Reservation</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Search For A Reservation</h1>
+<p><b>Function Number:</b> 5</p>
+<p><b>Function Name: </b>Search For A Reservation</p>
+<a href="search_reservation.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Query</p>
+<p><b>Description: </b>This function accepts any of the following as inputs:
+    Guest First Name, Guest Last Name, Guest ID, Booking ID, Guest Phone, or Guest Email
+    . This function returns two tables: A list of all reservation entries linked to Guest ID
+    or Booking ID if they were provided, and a table displaying all records containing
+    any of the guest information (name, email, phone) that were provided.</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for creating or managing reservations
+</p>
+<p><b>Tables Affected: </b>reservation and guests</p>
+<p><b>Sample Input: </b> Guest First Name = 'Gordon', Booking ID = 1</p>
+<p><b>Sample Output: </b> [guest_id: 1, booking_id: 1, occurred: 2021-02-14 09:34:22, status: scheduled, bank: Chase, acct: 8569652125]</p>
+<p><b>Notes: </b>
+    This function consists of two seperate queries. One query simply selects any records matching
+    a provided Booking or Reservation ID. The second implements a nested query. The inner query
+    will return a set of Guest IDs containing provided information such as name, phone, or email. The outer query
+    then uses this set to retrieve any records in the table 'reservation' that match a Guest ID contained in
+    the set. This function also implements error checking by using the mysqli_num_rows() to ensure that
+    search parameters return at least one result.
+
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

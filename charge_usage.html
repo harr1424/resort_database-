@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Charge A Booking</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Charge A Booking </h1>
+<p><b>Function Number:</b> 11</p>
+<p><b>Function Name: </b>Charge A Booking</p>
+<a href="charge.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Insert and query</p>
+<p><b>Description: </b>This function accepts the following inputs:
+    Current Time, Billed Item ID, and Booking ID.  These parameters are used to
+    insert a new record into the table 'charge' linking a charge to a booking ID at a
+    specific date and time.
+</p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for posting transactions.
+</p>
+<p><b>Tables Affected: </b>charge</p>
+<p><b>Sample Input: </b> Current Time = 2021-4-9 10:53:25, Billed Item ID = 9, Booking ID = 3</p>
+<p><b>Sample Output: </b>A table displays all charges debited to the Booking ID provided</p>
+<p><b>Notes: </b>
+    This function inserts a new record into the table 'charge' containing provided information.
+    If errors are encountered, they are displayed to the user.
+    After record insertion, a query is performed on the table 'charge' to retrieve all records
+    for the Booking ID provided.
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>

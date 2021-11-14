@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<html>
+<head>
+<title>Cancel Guest Activity</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1> Cancel Guest Activity</h1>
+<a href="activity_schedule.php">View All Scheduled Activities</a>
+<br>
+<br>
+<div class="container">
+<form action="cancel_activity.php" method="post">
+<label>Guest ID</label><type="text"/>
+<input type="text" id="guest" name="guest">
+<br>
+<label>Activity Name</label><type="text"/>
+<input type="text" id="activity" name="activity">
+<br>
+    <label>Date</label><type="text"/>
+    <input type="datetime-local" id="date" name="date">
+    <br>
+<input type="submit" name="process" value="Cancel" />
+</form>
+</div>
+<br>
+<p>
+    NOTE: The 'Date' field above implements the 'datetime-local' input type.
+    If you are using a Chromium based browser (Chrome, Brave, Edge) you will
+    not be able to type in a value, you will need to use the calendar drop down
+    button at the right to enter a value instead
+</p>
+<a href="home.html">Main Menu</a>
+
+</body>
+</html>

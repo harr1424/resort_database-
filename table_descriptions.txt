@@ -1,0 +1,170 @@
+Current database: username
+
+MariaDB [username]> source desc_all.sql
+ACTIVITIES:
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| name     | varchar(30)  | NO   | PRI | NULL    |       |
+| price    | decimal(6,2) | YES  |     | NULL    |       |
+| location | varchar(20)  | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+3 rows in set (0.002 sec)
+ASSIGN_ACTIVITIES:
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| id        | int(11)     | NO   | PRI | NULL    |       |
+| name      | varchar(30) | NO   | PRI | NULL    |       |
+| scheduled | datetime    | NO   | PRI | NULL    |       |
+| status    | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.001 sec)
+ASSIGN_LODGING:
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| booking_id     | int(11)     | NO   | PRI | NULL    |       |
+| guest_id       | int(11)     | NO   | PRI | NULL    |       |
+| site_name      | varchar(20) | NO   | PRI | NULL    |       |
+| lodging_number | int(11)     | NO   | PRI | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+4 rows in set (0.001 sec)
+ASSING_ROLE:
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| role_name | varchar(20) | NO   | PRI | NULL    |       |
+| staff_id  | int(11)     | NO   | PRI | NULL    |       |
+| start     | date        | NO   |     | NULL    |       |
+| end       | date        | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.001 sec)
+ASSIGN_STAFF:
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| staff_id   | int(11)      | NO   | PRI | NULL    |       |
+| booking_id | int(11)      | NO   | PRI | NULL    |       |
+| feedback   | varchar(120) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+3 rows in set (0.001 sec)
+BILLABLES:
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int(11)      | NO   | PRI | NULL    | auto_increment |
+| description | varchar(30)  | YES  |     | NULL    |                |
+| location    | varchar(20)  | YES  |     | NULL    |                |
+| amount      | decimal(6,2) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.001 sec)
+BOOKING:
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| arrive   | date        | NO   |     | NULL    |                |
+| depart   | date        | NO   |     | NULL    |                |
+| special  | varchar(60) | YES  |     | NULL    |                |
+| type     | varchar(30) | YES  |     | NULL    |                |
+| event    | varchar(30) | YES  |     | NULL    |                |
+| referral | varchar(30) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+7 rows in set (0.001 sec)
+CHARGE:
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| booking_id  | int(11)  | NO   | PRI | NULL    |       |
+| billable_id | int(11)  | NO   | PRI | NULL    |       |
+| occurred    | datetime | NO   | PRI | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+3 rows in set (0.001 sec)
+CHILD:
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   | PRI | NULL    |       |
+| name  | varchar(20) | NO   | PRI | NULL    |       |
+| dob   | date        | YES  |     | NULL    |       |
+| age   | int(11)     | YES  |     | NULL    |       |
+| sex   | char(1)     | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.001 sec)
+DEPENDENT:
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| staff_id | int(11)     | NO   | PRI | NULL    |       |
+| name     | varchar(20) | NO   | PRI | NULL    |       |
+| sex      | char(1)     | YES  |     | NULL    |       |
+| dob      | date        | YES  |     | NULL    |       |
+| age      | int(11)     | YES  |     | NULL    |       |
+| relation | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.001 sec)
+GUESTS:
++---------+-------------+------+-----+---------+----------------+
+| Field   | Type        | Null | Key | Default | Extra          |
++---------+-------------+------+-----+---------+----------------+
+| id      | int(11)     | NO   | PRI | NULL    | auto_increment |
+| fname   | varchar(20) | NO   |     | NULL    |                |
+| lname   | varchar(20) | NO   |     | NULL    |                |
+| dob     | date        | YES  |     | NULL    |                |
+| phone   | varchar(18) | YES  |     | NULL    |                |
+| email   | varchar(40) | YES  |     | NULL    |                |
+| age     | int(11)     | YES  |     | NULL    |                |
+| street  | varchar(30) | YES  |     | NULL    |                |
+| city    | varchar(20) | YES  |     | NULL    |                |
+| state   | varchar(20) | YES  |     | NULL    |                |
+| country | varchar(20) | YES  |     | NULL    |                |
+| postal  | varchar(10) | YES  |     | NULL    |                |
++---------+-------------+------+-----+---------+----------------+
+12 rows in set (0.001 sec)
+LODGING:
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| site_name     | varchar(20)  | NO   | PRI | NULL    |       |
+| number        | int(11)      | NO   | PRI | NULL    |       |
+| rate          | decimal(6,2) | YES  |     | NULL    |       |
+| max_occupancy | int(11)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.001 sec)
+RESERVATION:
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| guest_id   | int(11)     | NO   | PRI | NULL    |       |
+| booking_id | int(11)     | NO   | PRI | NULL    |       |
+| occurred   | datetime    | NO   |     | NULL    |       |
+| status     | varchar(20) | NO   |     | NULL    |       |
+| bank       | varchar(20) | YES  |     | NULL    |       |
+| acct       | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+6 rows in set (0.001 sec)
+ROLE:
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| name     | varchar(20) | NO   | PRI | NULL    |       |
+| location | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.001 sec)
+STAFF:
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int(11)     | NO   | PRI | NULL    | auto_increment |
+| fname  | varchar(20) | NO   |     | NULL    |                |
+| lname  | varchar(20) | NO   |     | NULL    |                |
+| dept   | varchar(10) | YES  |     | NULL    |                |
+| phone  | varchar(10) | YES  |     | NULL    |                |
+| email  | varchar(40) | YES  |     | NULL    |                |
+| street | varchar(30) | YES  |     | NULL    |                |
+| city   | varchar(20) | YES  |     | NULL    |                |
+| state  | varchar(20) | YES  |     | NULL    |                |
+| zip    | varchar(10) | YES  |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+10 rows in set (0.001 sec)

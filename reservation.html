@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<html>
+<head>
+<title>Create New Reservation</title>
+<script>
+function Timestamp()
+{
+const currentTime = new Date();
+var year = currentTime.getFullYear();
+var month = currentTime.getMonth()+1;
+var day = currentTime.getDate();
+var dash = "-";
+var space = " ";
+var colon = ":";
+var hour = currentTime.getHours();
+var minutes = currentTime.getMinutes();
+var seconds = currentTime.getSeconds();
+var timestamp = year.toString().concat(dash, month, dash, day, space, hour, colon, minutes, colon, seconds);
+$('#occurred').val(timestamp);
+}
+</script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body onload="Timestamp()">
+<h1>Enter Reservation Details </h1>
+<a href="reservation.png"> Example </a>
+<br>
+<h3>* marks required fields</h3>
+<div class="container">
+<form action="reservation_process.php" method="post">
+<fieldset>
+<label>Current Time*</label><type="text"/>
+<input type="text" id="occurred" name="occurred">
+<br>
+<label>Arrive* (Use DateTime Format as Above)</label><type="text"/>
+<input type="text" id="arrive" name="arrive">
+<br>
+<label>Depart* (Use DateTime Format as Above)</label><type="text"/>
+<input type="text" id="depart" name="depart">
+<br>
+<label>First Name(s)*</label><type="text"/>
+<input type="text" id="fname" name="fname">
+<br>
+<label>Last Name*</label><type="text"/>
+<input type="text" id="lname" name="lname">
+<br>
+<label>DOB (Year-Month-Day)</label><type="text"/>
+<input type="text" id="dob" name="dob">
+<br>
+<label>Phone</label><type="text"/>
+<input type="text" id="phone" name="phone">
+<br>
+<label>Email</label><type="text"/>
+<input type="text" id="email" name="email">
+<br>
+<label>Street</label><type="text"/>
+<input type="text" id="street" name="street">
+<br>
+<label>City</label><type="text"/>
+<input type="text" id="city" name="city">
+<br>
+<label>State</label><type="text"/>
+<input type="text" id="state" name="state">
+<br>
+<label>Country</label><type="text"/>
+<input type="text" id="country" name="country">
+<br>
+<label>Postal</label><type="text"/>
+<input type="text" id="postal" name="postal">
+<br>
+<label>Status*</label><type="text"/>
+<input type="text" id="status" name="status" value="scheduled">
+<br>
+<label>Bank</label><type="text"/>
+<input type="text" id="bank" name="bank">
+<br>
+<label>Account Number</label><type="text"/>
+<input type="text" id="account" name="account">
+<br>
+<label>Special Considerations</label><type="text"/>
+<input type="text" id="special" name="special">
+<br>
+<label>Type of Stay</label><type="text"/>
+<input type="text" id="type" name="type">
+<br>
+<label>Associated Event</label><type="text"/>
+<input type="text" id="event" name="event">
+<br>
+<label>Referral Source</label><type="text"/>
+<input type="text" id="referral" name="referall">
+<br>
+<input type="submit" name="process" value="Create Entry" />
+</fieldset>
+</form>
+    <a href="home.html">Main Menu</a>
+
+</body>
+</html>
+
+
+
+

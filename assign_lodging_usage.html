@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+    <title>Usage: Assign Guest To Lodging</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<h1>Assign Guest To Lodging </h1>
+<p><b>Function Number:</b> 6</p>
+<p><b>Function Name: </b>Assign Guest To Lodging</p>
+<a href="assign_lodging.html">Link to Function Implementation</a>
+<p><b>Function Type: </b>Insertion</p>
+<p><b>Description: </b>This function accepts the following inputs:
+    Booking ID, Guest ID, Site Name, and Lodging Number. These four parameters form the full record
+    inserted into the table 'assign_lodging', which tracks lodging assignments.
+    </p>
+<p>
+    <b>Primary Users: </b> Resort staff responsible for creating or managing reservations
+</p>
+<p><b>Tables Affected: </b>assign_lodging</p>
+<p><b>Sample Input: </b> Booking ID = 1, Guest ID = 1, Site Name = 'Clark', Lodging Number = 101</p>
+<p><b>Sample Output: </b>[booking_id: 1, guest_id: 1, site_name: Clark, lodging_number: 101]</p>
+<p><b>Notes: </b>
+    This function consists of one insert query. All parameters passed to the web form (Booking ID,
+    Guest ID, Site Name, and Lodging Number) are mandatory and if they are not submitted a message is displayed
+    informing the user that these fields are required (using mysqli_num_rows()). Error checking is provided such that
+    if an error occurs, the error message will be echoed out to the user in the format "ERROR: $error_specific_message."
+    For example, attempting to insert a duplicate record will result in "ERROR Updating Table Duplicate entry '1-1-Clark -101' for key 'PRIMARY'"
+    being echoed.
+
+</p>
+<a href='home.html'>Main Menu</a>
+</body>
+</html>
