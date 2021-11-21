@@ -1,3 +1,4 @@
+-- this table stores guest information
 create table guests(
 	id INT AUTO_INCREMENT PRIMARY KEY, 
 	fname VARCHAR(20) NOT NULL, 
@@ -13,6 +14,7 @@ create table guests(
 	postal VARCHAR(10)
 );
 
+-- this table stores information about guest children
 create table child(
 	id INT,
 	name VARCHAR(20), 
@@ -23,13 +25,14 @@ create table child(
 	PRIMARY KEY (id, name)
 );
 
+-- this table contains all of the activities that guests can participate in while at the resort
 create table activities(
 	name VARCHAR(30) PRIMARY KEY,
 	price DECIMAL(6, 2), 
 	location VARCHAR(20)
 );
 
-
+-- this table keeps a record of which guests are scheduled for which activities
 create table assign_activities(
 	id INT, 
 	name VARCHAR(30), 
@@ -40,6 +43,8 @@ create table assign_activities(
 	FOREIGN KEY (name) REFERENCES activities (name)
 );
 
+-- this table stores information regarding a specific booking
+-- the information in this table is not considered  sensitive
 create table booking( 
 	id INT PRIMARY KEY AUTO_INCREMENT, 
 	arrive DATE NOT NULL, 
@@ -50,8 +55,8 @@ create table booking(
 	referral VARCHAR(30)
 ); 
 
-
-
+-- this table stores information regarding a reservation
+-- the information in this table is considered sensitive
 create table reservation(
 	guest_id INT, 
 	booking_id INT, 
@@ -64,6 +69,7 @@ create table reservation(
 	FOREIGN KEY (booking_id) REFERENCES booking (id)
 );
 
+-- this table contains all of the lodging options at the resort
 create table lodging(
 	site_name VARCHAR(20), 
 	number INT, 
@@ -72,6 +78,7 @@ create table lodging(
 	PRIMARY KEY (site_name, number)
 );
 
+-- this table tracks lodging assignments for each guest
 create table assign_lodging(
 	booking_id INT,
 	guest_id INT,
@@ -83,6 +90,7 @@ create table assign_lodging(
 	FOREIGN KEY (site_name, lodging_number) REFERENCES lodging (site_name, number)
 );
 
+-- this table stores all items which may be billed to a booking
 create table billables(
 	id INT AUTO_INCREMENT PRIMARY KEY,  
 	description VARCHAR(30), 
@@ -90,6 +98,7 @@ create table billables(
 	amount DECIMAL(6,2)
 );
 
+-- this table keeps a record of what items have been charged to a booking
 create table charge(
 	booking_id INT, 
 	billable_id INT, 
@@ -99,7 +108,7 @@ create table charge(
 	FOREIGN KEY (billable_id) REFERENCES billables (id)
 );
 
-
+-- this table contains information about all resort employees
 create table staff(
 	id INT AUTO_INCREMENT PRIMARY KEY, 
 	fname VARCHAR(20) NOT NULL, 
@@ -113,11 +122,13 @@ create table staff(
 	zip VARCHAR(10)
 );
 
+-- this table lists all potential roles an employee may be assigned
 create table role(
 	name VARCHAR(20) PRIMARY KEY, 
 	location VARCHAR(20)
 );
 
+-- this table records which guests each employee is assigned to
 create table assign_staff(
 	staff_id INT, 
 	booking_id INT, 
@@ -127,9 +138,7 @@ create table assign_staff(
 	FOREIGN KEY (booking_id) REFERENCES booking (id)
 );
 
-
-
-
+-- this table keeps a record of what role each employee is assigned
 create table assign_role(
 	role_name VARCHAR(20), 
 	staff_id INT, 
@@ -140,7 +149,7 @@ create table assign_role(
 	FOREIGN KEY (staff_id) REFERENCES staff (id)
 );
 
-
+-- this tale records information regarding the dependents of each employee
 create table dependent(
 	staff_id INT, 
 	name VARCHAR(20), 
