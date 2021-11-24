@@ -149,7 +149,7 @@ create table assign_role(
 	FOREIGN KEY (staff_id) REFERENCES staff (id)
 );
 
--- this tale records information regarding the dependents of each employee
+-- this table records information regarding the dependents of each employee
 create table dependent(
 	staff_id INT, 
 	name VARCHAR(20), 
